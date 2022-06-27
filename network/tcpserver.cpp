@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/types.h>
+#include <iostream>
 
 void TcpServer::Init() {
 	auto socketFd = socket(AF_INET, SOCK_STREAM, 0);
@@ -32,6 +33,7 @@ void TcpServer::Init() {
 	while(1) {
 		socklen_t client = sizeof(struct sockaddr_in);
 		c_fd = accept(socketFd, (struct sockaddr*)&c_addr, &client);
+		std::cout << "ins" << std::endl;
 
 
 	}
